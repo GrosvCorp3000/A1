@@ -25,5 +25,7 @@ dimensions of the screen.
 */
 void display(const char *str, int row, int col, int fieldLen);
 
+int columnCheck();
+
 int edit(char *str, int row, int col, int fieldLength, int maxStrLength,
 		 bool* insertMode, int* strOffset, int* curPosition);
