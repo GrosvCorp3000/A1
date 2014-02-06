@@ -65,11 +65,7 @@ int columnCheck()
 
 int edit(char *str, int row, int col, int fieldLength, int maxStrLength, bool* insertMode, int* strOffset, int* curPosition)
 {
-	int userKey=0;
-	int returnValue = 0;
-	int strLen = strlen(str);
-	int flag = 0;
-	
+	int i=0, userKey=0, returnValue = 0, strLen = strlen(str), flag = 0;	
 	char* tempStr;
 	tempStr = new char[strLen+1];
 	strcpy(tempStr,str);
@@ -108,159 +104,160 @@ int edit(char *str, int row, int col, int fieldLength, int maxStrLength, bool* i
 		switch(userKey)
 		{
 			case ENTER:
-				{
 					returnValue=ENTER;
 					flag = 1;
 					break;
-				}
-
+				
 			case TAB:
-				{
 					returnValue=TAB;
 					flag=1;
 					break;
-				}
-
+				
 			case UP:
 					returnValue=UP;
 					flag=1;
 					break;
 
 			case DOWN:
-				{	
 					returnValue=DOWN;
 					flag=1;
 					break;
-				}
-
+				
 			case PGUP:
-				{
 					returnValue=PGUP;
 					flag=1;
 					break;				
-				}
-
+				
 			case PGDN:
-				{
 					returnValue=PGDN;
 					flag=1;
 					break;
-				}
-
+				
 			case F(1):
-				{
 					returnValue=F(1);
 					flag=1;
 					break;
-				}
-
+				
 			case F(2):
-				{
 					returnValue=F(2);
 					flag=1;
 					break;
-				}
-
+				
 			case F(3):
-				{
 					returnValue=F(3);
 					flag=1;
 					break;
-				}
-
+				
 			case F(4):
-				{
 					returnValue=F(4);
 					flag=1;
 					break;
-				}
-
+				
 			case F(5):
-				{
 					returnValue=F(5);
 					flag=1;
 					break;
-				}
-
+				
 			case F(6):
-				{
 					returnValue=F(6);
 					flag=1;
 					break;
-				}
+				
 			case F(7):
-				{
 					returnValue=F(7);
 					flag=1;
 					break;
-				}
-
+				
 			case F(8):
-				{
 					returnValue=F(8);
 					flag=1;
 					break;
-				}
+				
 			case F(9):
-				{
 					returnValue=F(9);
 					flag=1;
 					break;
-				}
-
+				
 			case F(10):
-				{
 					returnValue=F(10);	
 					flag=1;
 					break;
-				}
-
+				
 			case F(11):
-				{
 					returnValue=F(11);
 					flag=1;
 					break;
-				}
-
+				
 			case F(12):
-				{
 					returnValue=F(12);
 					flag=1;
 					break;
+				
+			case LEFT:
+					//if the col isn't zero, move curPosition left by one until it is THEN move offset.
+					//if col = 0, and stroffset greater than 0, move the stringoffset left 1
+				    if(col!=0)
+						*curPosition-=1;
+						
+					else if(*strOffset < 0)
+						*strOffset -= 1;
+
+					break;
+
+			case RIGHT:
+					if(columnCheck()!=1 && (*curPosition < fieldLength-1))		
+						*curPosition++
+
+					else if(*strOffset < strLen+1);
+						*strOffset++;
+					
+					break;		
+				
+			case HOME:
+					if(*curPosition !=0)	
+						*curPosition=0;	
+			
+					if(*strOffset !=0)
+						*strOffset=0;
+
+					break;
+				
+			case END:
+						if(*curPosition < fieldLength+1)
+							*curPosition=fieldLength;
+							
+						else if(*strOffset < maxStrLength+1)
+							*strOffset=maxStrLength+1;		
+			case DEL:
+				{
+					i = *strOffset + *curPosition;
+					do
+					{
+						str[i] = str[i+1]
+						i++;
+					}
+					while(str[i]!='\0');
 				}
-		}
 
-		if(userKey==LEFT && columnCheck()!=1 && (*curPosition < fieldLength-2))
-		{
-			cio::console.setPosition(row, col +1);
-			if(*strOffset < maxStrLength)
-				*strOffset += 1;
-		}
+			case BACKSPACE:
+				{
+					i = *strOffset + *curPosition;
+					do
+					{
+						str[i-1] = str[i]
+						i++;
+					}
+					while(*strOffset != 0);
+				}
 
-		if(userKey==RIGHT && columnCheck()!=-1 && (*curPosition > *str))
-		{
-			cio::console.setPosition(row, col-1);
-			if(*strOffset < 0);
-				*strOffset -= 1;
-		}
+			case INSERT:
+				if(*insertMode==true)
+					*insertMode=false;
 
-		if(userKey==HOME)
-		{
-			int startCol = *str-*curPosition;	
-			cio::console.setPosition(row, startCol);
-			if(*strOffset !=0)
-				*strOffset=0;
-		}
+				else if(*insertMode==false)
+					*insertMode=true;
 
-		if(userKey==END)
-		{
-			
-			cio::console.setPosition(row,);
-			if(*strOffset < maxStrLength)
-				*strOffset = maxStrLength;
-			
-		}
-
+													
 	}		
 
 	return returnValue;
