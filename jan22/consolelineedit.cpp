@@ -115,11 +115,13 @@ int edit(char *str, int row, int col, int fieldLength, int maxStrLength, bool* i
 				
 			case UP:
 					returnValue=UP;
+					cio::console.setPosition(row+1, col);
 					flag=1;
 					break;
 
 			case DOWN:
 					returnValue=DOWN;
+					cio::console.setPosition(row-1, col);
 					flag=1;
 					break;
 				
