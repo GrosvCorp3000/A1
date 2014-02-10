@@ -1,14 +1,18 @@
-﻿Build started 05/02/2014 12:44:22 PM.
-     1>Project "C:\Users\Matthew\Documents\GitHub\A1\jan22\jan22.vcxproj" on node 2 (Build target(s)).
+﻿Build started 10/02/2014 1:09:49 AM.
+     1>Project "C:\Users\Matthew\Documents\GitHub\A1\jan22\jan22.vcxproj" on node 2 (Rebuild target(s)).
      1>ClCompile:
-         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt consolelineedit.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\CL.exe /c /ZI /nologo /W3 /WX- /sdl /Od /Oy- /D _CRT_SECURE_NO_WARNINGS /D _MBCS /Gm /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc110.pdb" /Gd /TP /analyze- /errorReport:prompt a1test.cpp console.cpp consolelineedit.cpp
          consolelineedit.cpp
-     1>c:\users\matthew\documents\github\a1\jan22\consolelineedit.cpp(75): error C4996: 'strcpy': This function or variable may be unsafe. Consider using strcpy_s instead. To disable deprecation, use _CRT_SECURE_NO_WARNINGS. See online help for details.
-                 c:\program files (x86)\microsoft visual studio 11.0\vc\include\string.h(110) : see declaration of 'strcpy'
-     1>c:\users\matthew\documents\github\a1\jan22\consolelineedit.cpp(244): warning C4390: ';' : empty controlled statement found; is this the intent?
-     1>c:\users\matthew\documents\github\a1\jan22\consolelineedit.cpp(258): error C2059: syntax error : ')'
-     1>Done Building Project "C:\Users\Matthew\Documents\GitHub\A1\jan22\jan22.vcxproj" (Build target(s)) -- FAILED.
+         console.cpp
+         a1test.cpp
+         Generating Code...
+       Link:
+         C:\Program Files (x86)\Microsoft Visual Studio 11.0\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"C:\Users\Matthew\Documents\GitHub\A1\jan22\Debug\jan22.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:\Users\Matthew\Documents\GitHub\A1\jan22\Debug\jan22.pdb" /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:\Users\Matthew\Documents\GitHub\A1\jan22\Debug\jan22.lib" /MACHINE:X86 Debug\a1test.obj
+         Debug\console.obj
+         Debug\consolelineedit.obj
+         jan22.vcxproj -> C:\Users\Matthew\Documents\GitHub\A1\jan22\Debug\jan22.exe
+     1>Done Building Project "C:\Users\Matthew\Documents\GitHub\A1\jan22\jan22.vcxproj" (Rebuild target(s)).
 
-Build FAILED.
+Build succeeded.
 
-Time Elapsed 00:00:01.04
+Time Elapsed 00:00:00.92
