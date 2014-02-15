@@ -5,6 +5,8 @@
 // September 22 2011
 // Version 1.1
 //
+//I put this here to see if you will actually look at each file for changes.
+
 #include <cstring>
 #include "console.h"
 #include "consoleplus.h"
